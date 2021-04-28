@@ -1,0 +1,43 @@
+---
+title: "Assignment 2 - File Operations in R"
+author: "Francis Miah"
+date: "4/26/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Creating Files
+
+## Use the file.create() function to create a new file.
+## The function returns a TRUE logical value if file is created otherwise, returns FALSE
+
+file.create("test_file.txt")
+
+# Writing to Files
+
+## write.table() function is used to write an object to a file.
+
+### Write iris dataset
+### into the txt file
+write.table(x = iris[1:10, ], file = "test_file.txt")
+           
+# Renaming Files
+
+## file.rename() function is used to rename an existing file
+
+### Rename file GFG.txt to newGFG.txt
+
+file.rename("test_file.txt", "new_test_file.txt")
+
+# Reading Files
+
+## read.table() function is used to read and output the content of files as a dataframe
+
+### Reading txt file
+data <- read.table(file = "new_test_file.txt")
+  
+### Print
+print(data)
